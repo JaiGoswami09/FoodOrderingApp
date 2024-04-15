@@ -33,14 +33,19 @@
     display:flex;
     text-align: center;
     flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 .res-card {
     width: 300px;
-    height: 400px;
+    height: 350px;
     margin-top: 10px;
     margin: 15px;
     padding: 5px;
+}
+
+img.res-logo {
+    height: 250px;
 }
 
 .res-card:hover {
@@ -51,6 +56,12 @@
 .res-logo {
     width:100%;
 }
+
+.res-card h3,h4,h5{
+    margin: 0;
+}
+
+
 
 
 
