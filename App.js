@@ -26,19 +26,22 @@ const Header = () => {
 
 const RestaurantCard = (props) => {
     const {resData} = props; 
+
     if (!resData || !resData.info) {
-        return null; // or render some placeholder content
+        return null; 
     }
-    const { info } = resData;
+
+    const{cloudinaryImageId,name,cuisines,avgRating,deliveryTime,costForTwo} = resData?.info;
+
     return (
         <div className="res-card" style={{backgroundColor: "#f0f0f0" }}>
             <img className="res-logo" alt="res-logo" 
-            src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + info.cloudinaryImageId }/>
-            <h3>{info.name}</h3>
-            <h5>{info.cuisines.join(",")}</h5>
-            <h5>{info.avgRating} Stars</h5>
-            <h5>{info.deliveryTime} Minutes</h5>
-            <h5>{info.costForTwo}</h5>
+            src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId }/>
+            <h3>{name}</h3>
+            <h5>{cuisines.join(",")}</h5>
+            <h5>{avgRating} Stars</h5>
+            <h5>{deliveryTime} Minutes</h5>
+            <h5>{costForTwo}</h5>
         </div>
     );
 };
@@ -2019,33 +2022,19 @@ const resList = [
     }
   ];
 
+  // Not using keys is not adviced/acceptable and we should use keys.....<<<< we can use index as keys but it is not recommended <<<<<we should use unique id as keys(best practice).
 const Body = () => {
     return (
         <div className="body">
-           
+          //************************************************** 
             <div className="res-container">
-            <RestaurantCard resData = {resList[0]} />
-            <RestaurantCard resData = {resList[1]} />
-            <RestaurantCard resData = {resList[2]} />
-            <RestaurantCard resData = {resList[3]} />
-            <RestaurantCard resData = {resList[4]} />
-            <RestaurantCard resData = {resList[5]} />
-            <RestaurantCard resData = {resList[6]} />
-            <RestaurantCard resData = {resList[7]} />
-            <RestaurantCard resData = {resList[8]} />
-            <RestaurantCard resData = {resList[9]} />
-            <RestaurantCard resData = {resList[10]} />
-            <RestaurantCard resData = {resList[11]} />
-            <RestaurantCard resData = {resList[12]} />
-            <RestaurantCard resData = {resList[13]} />
-            <RestaurantCard resData = {resList[14]} />
-            <RestaurantCard resData = {resList[15]} />
-            <RestaurantCard resData = {resList[16]} />
-            <RestaurantCard resData = {resList[17]} />
-            <RestaurantCard resData = {resList[18]} />
-            <RestaurantCard resData = {resList[19]} />
-            <RestaurantCard resData = {resList[20]} />
+              {
+                resList.map((restaurant) => (<RestaurantCard key={restaurant.info.id} resData = {restaurant}/>))
+              }
+            
              </div>
+
+             //*****************************1:53:00*************************** 
 
         </div>
 
