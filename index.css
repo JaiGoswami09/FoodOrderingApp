@@ -29,6 +29,11 @@
 
 /*************************************BODY*******************************/
 
+.filter-btn {
+    margin: 15px;
+    cursor: pointer;
+
+}
 .res-container {
     display:flex;
     text-align: center;
