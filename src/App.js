@@ -1,50 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
-// Component is just a normal javascript function which return some JSX. 
 
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img 
-                className="logo"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UhLKALBi5PVOyXGJIZtSfmcWXCuPAm9qyA&s " />
-            </div>
-            <div className="search">Search</div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul> 
-            </div>     
-        </div>
-     );
-};
-
-const RestaurantCard = (props) => {
-    const {resData} = props; 
-
-    if (!resData || !resData.info) {
-        return null; 
-    }
-
-    const{cloudinaryImageId,name,cuisines,avgRating,deliveryTime,costForTwo} = resData?.info;
-
-    return (
-        <div className="res-card" style={{backgroundColor: "#f0f0f0" }}>
-            <img className="res-logo" alt="res-logo" 
-            src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId }/>
-            <h3>{name}</h3>
-            <h5>{cuisines.join(",")}</h5>
-            <h5>{avgRating} Stars</h5>
-            <h5>{deliveryTime} Minutes</h5>
-            <h5>{costForTwo}</h5>
-        </div>
-    );
-};
 
 const resList = [
     {
@@ -2021,26 +1980,7 @@ const resList = [
       }
     }
   ];
-
-  // Not using keys is not adviced/acceptable and we should use keys.....<<<< we can use index as keys but it is not recommended <<<<<we should use unique id as keys(best practice).
-const Body = () => {
-    return (
-        <div className="body">
-          //************************************************** 
-            <div className="res-container">
-              {
-                resList.map((restaurant) => (<RestaurantCard key={restaurant.info.id} resData = {restaurant}/>))
-              }
-            
-             </div>
-
-             //*****************************1:53:00*************************** 
-
-        </div>
-
-    );
-};
-
+ 
 const AppLayout = () => {
     return (
         <div className="app">
@@ -2050,6 +1990,5 @@ const AppLayout = () => {
     );
 };
             
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout />); 
