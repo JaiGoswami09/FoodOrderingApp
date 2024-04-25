@@ -1,9 +1,16 @@
 // Not using keys is not adviced/acceptable and we should use keys.....<<<< we can use index as keys but it is not recommended <<<<<we should use unique id as keys(best practice).
 import RestaurantCard from "./RestaurantCard";
 import resList from "../util/mockData";
+import { useState } from "react";
 
 const Body = () => {
-  let listofRestaurants = [
+
+  //Local State Variable:
+  const [listofRestaurants, setListOfRestaurant] = useState(resList);
+
+  /******************************************************************
+  // Normal Js Variable
+  let listofRestaurantsJs = [
     {
     info: {
       id: "65330",
@@ -21,7 +28,6 @@ const Body = () => {
       avgRating: 3.3,
     },
   },
-
   { 
     info: {
     id: "65859",
@@ -41,15 +47,18 @@ const Body = () => {
   },
 },
   ];
+
+  */
     return (
         <div className="body">
             <div className="filter">
                 <button className="filter-btn" 
+                // Filter Logic Here.
                 onClick={() => {
-                  // Filter Logic Here.
-                  listofRestaurants = listofRestaurants.filter(
+                  const filteredList = listofRestaurants.filter(
                     (res) => res.info.avgRating > 4
                   );
+                  setListOfRestaurant(filteredList);
                   console.log(listofRestaurants);
                   }}>Top-Rated Restaurant</button>
             </div>
