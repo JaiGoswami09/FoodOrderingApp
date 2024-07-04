@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Body = () => {
 
-  //Local State Variable:
+  //Local State Variable::
   const [listofRestaurants, setListOfRestaurant] = useState(resList);
 
   /******************************************************************
