@@ -8,7 +8,7 @@ const Body = () => {
   //Local State Variable::
   const [listofRestaurants, setListOfRestaurant] = useState(resList);
 
-  /******************************************************************
+  /************************************************************************
   // Normal Js Variable
   let listofRestaurantsJs = [
     {
