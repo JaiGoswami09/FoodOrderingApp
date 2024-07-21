@@ -9,7 +9,7 @@
     "build": "parcel build index.html"
   },
 
-  /**/
+ 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JaiGoswami09/FoodOrderingApp.git"
