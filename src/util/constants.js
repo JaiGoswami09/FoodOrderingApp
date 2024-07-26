@@ -4,7 +4,7 @@ export const CDN_URL =
 export const LOGO_URL =
      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&s";
 
-/** 
+/** *****
 export default CDN_URL;
 export default LOGO_URL;
 
